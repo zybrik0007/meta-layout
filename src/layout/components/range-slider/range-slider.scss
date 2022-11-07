@@ -1,0 +1,30 @@
+.range-slider {
+  width: 266px;
+}
+
+.range-slider__head {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.range-slider__title {
+  color: $ds100;
+  @include h3;
+}
+
+.range-slider__status {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $ds50;
+}
+
+.range-slider__toddler {
+  margin-top: 23px;
+  position: relative;
+  height: 6px;
+}

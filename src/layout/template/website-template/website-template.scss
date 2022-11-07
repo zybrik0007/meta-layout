@@ -1,0 +1,32 @@
+.website-template {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.website-template__header {
+  z-index: 99;
+}
+
+.website-template__main {
+  flex: 1 0 auto;
+}
+
+.website-template__footer {
+  flex: 0 0 auto;
+}
+
+.website-template__footer-mobile {
+  display: none;
+}
+
+@media screen and (max-width: $width-s) {
+  .website-template__footer {
+    display: none;
+  }
+
+  .website-template__footer-mobile {
+    display: block;
+  }
+}

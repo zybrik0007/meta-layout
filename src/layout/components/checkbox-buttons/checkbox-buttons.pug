@@ -1,0 +1,21 @@
+include ../../components/name-form-elements/name-form-elements
+include ../../components/checkbox/checkbox
+
+mixin checkbox-buttons(options)
+
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.list
+        - options.list = []
+
+    .checkbox-buttons
+        .checkbox-buttons__header
+            +name-form-elements({title: options.title, status: ''})
+        ul.checkbox-buttons__list
+            each item in options.list
+                li.checkbox-buttons__item
+                    +checkbox(item)

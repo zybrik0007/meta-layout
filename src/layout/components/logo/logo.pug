@@ -1,0 +1,11 @@
+mixin logo(options)
+
+    if !options
+        - options = {}
+
+    if !options.link
+        - options.link = ''
+
+    a(href=options.link).logo
+        img(src=require('../../../images/logo/logo-icon.svg')).logo__icon
+        img(src=require('../../../images/logo/logo-name.svg')).logo__name

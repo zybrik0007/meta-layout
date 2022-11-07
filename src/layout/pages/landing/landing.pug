@@ -1,0 +1,16 @@
+extends ../../template/website-template/website-template
+include ../../components/pages/landing-page/landing-page
+
+block parameters
+    - title = 'Главная страница'
+
+
+block main
+    +landing-page({
+        form: {
+            from: '',
+            to: '',
+            guests: {},
+            classButton: ''
+        }
+    })

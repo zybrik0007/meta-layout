@@ -1,0 +1,42 @@
+extends ../../template/ui-template/ui-template
+include ../../components/ui-color/ui-color
+include ../../components/ui-type/ui-type
+
+block parameters
+    - title = 'Цвета и типы'
+
+
+
+
+block main
+    -
+        var colors = [
+            {type: 'ds100', title: 'Dark Shade 100%', description: '#1F2041'},
+            {type: 'ds75', title: 'Dark Shade 75%', description: '#1F2041'},
+            {type: 'ds50', title: 'Dark Shade 50%', description: '#1F2041'},
+            {type: 'ds25', title: 'Dark Shade 25%', description: '#1F2041'},
+            {type: 'ds5', title: 'Dark Shade 5%', description: '#1F2041'},
+            {type: 'purple', title: 'Purple', description: '#BC9CFF'},
+            {type: 'green', title: 'Green', description: '#6FCF97'}]
+
+        var types = [
+            {type: 'h1', title: 'H1', description: 'This one is the sub-section or widget title'},
+            {type: 'h2', title: 'H2', description: 'Next one is the item title inside widgets'},
+            {type: 'h3', title: 'H3', description: 'This is a label or CTA text'},
+            {type: 'body', title: 'Body', description: 'This is the body text which is used for most of the design, like paragraphs, lists, etc.'}]
+
+    .colors-type
+        .colors-type__container
+            .colors-type__wrapper
+                ul.colors-type__list-colors
+                    each color in colors
+                        li.colors-type__item-colors
+                            +ui-color(color)
+            .colors-type__wrapper
+                ul.colors-type__list-types
+                    each type in types
+                        li.colors-type__item-types
+                            +ui-type(type)
+
+
+

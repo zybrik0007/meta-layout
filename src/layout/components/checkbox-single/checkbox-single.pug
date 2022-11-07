@@ -1,0 +1,8 @@
+mixin checkbox-single(options)
+    if !options
+        - options = {}
+
+    if !options.description
+        - options.description = ''
+
+    span.checkbox-single!=options.description

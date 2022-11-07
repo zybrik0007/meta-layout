@@ -1,0 +1,22 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "requireConfigFile": false
+  },
+  "extends": ["eslint:recommended", "airbnb"],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true
+  },
+  "rules": {
+    "max-len": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "class-methods-use-this": "off",
+    "except-parens": "off",
+    "no-return-assign": ["off", "always"],
+    "import/prefer-default-export": "off",
+    "quotes": ["error", "single"]
+  }
+}

@@ -1,0 +1,56 @@
+include ../logo/logo
+include ../subscription-text-field/subscription-text-field
+include ../social-icon/social-icon
+include ../footer-links/footer-links
+
+
+mixin footer(options)
+
+    if !options
+        - options = {}
+
+    if !options.nav
+        - options.nav = {}
+
+    if !options.review
+        - options.review = {}
+
+    if !options.service
+        - options.service = {}
+
+    if !options.icons
+        - options.icons = []
+
+    if !options.logoLink
+        - options.logoLink = ''
+
+    .footer
+        .footer__container
+            .footer__wrapper
+                .footer__top
+                    .footer__info
+                        .footer__logo
+                            +logo({link: options.logoLink})
+                        p.footer__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+                    .footer__nav
+                        +footer-links(options.nav)
+                    .footer__review
+                        +footer-links(options.review)
+                    .footer__service
+                        +footer-links(options.service)
+                    .footer__subscription
+                        h2.footer__title Подписка
+                        p.footer__description Получайте специальные предложения и новости сервиса
+                        .footer__input
+                            +subscription-text-field({placeholder: 'Email'})
+        .footer__container
+            .footer__wrapper
+                .footer__bottom
+                    .footer__bottom-logo
+                        +logo({link: options.logoLink})
+                    span.footer__name Copyright © 2018 Toxin отель. Все права защищены.
+                    ul.footer__icons-list
+                        each item in options.icons
+                            li.footer__icons-item
+                                a(href=item.link).footer__icons-link
+                                    +social-icon({classes: item.classes})

@@ -1,0 +1,47 @@
+.footer-mobile {
+  width: 100%;
+  max-width: 768px;
+  min-width: 320px;
+  height: 367px;
+  display: flex;
+  justify-content: center;
+  background: $white;
+}
+
+.footer-mobile__container {
+  margin-top: 118.5px;
+}
+
+.footer-mobile__logo {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-mobile__description {
+  display: block;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: $ds75;
+  margin-top: 21px;
+
+}
+
+.footer-mobile__list {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+  margin-left: -23px;
+}
+
+.footer-mobile__item {
+  display: block;
+  margin-left: 23px;
+}
+
+.footer-mobile__link {
+  text-decoration: none;
+}

@@ -1,0 +1,32 @@
+mixin ui-type(options)
+
+    if !options
+        - options = {}
+
+    if !options.type
+        - options.type = ''
+
+    if !options.title
+        - options.title = ''
+
+    if !options.description
+        - options.description = ''
+
+    .ui-type
+        case options.type
+            when 'h1'
+                span.ui-type__title.ui-type__title_xl=options.title
+                span.ui-type__description.ui-type__description_xl=options.description
+            when 'h2'
+                span.ui-type__title.ui-type__title_l=options.title
+                span.ui-type__description.ui-type__description_l=options.description
+            when 'h3'
+                span.ui-type__title.ui-type__title_s=options.title
+                span.ui-type__description.ui-type__description_s=options.description
+            when 'body'
+                span.ui-type__title.ui-type__title_m=options.title
+                span.ui-type__description.ui-type__description_m=options.description
+            default
+                span.ui-type__title.ui-type__title_xl=options.title
+                span.ui-type__description.ui-type__description_xl=options.description
+

@@ -1,0 +1,13 @@
+mixin checkbox-double(options)
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.description
+        - options.description = ''
+
+    span.checkbox-double
+        span.checkbox-double__title!=options.title
+        span.checkbox-double__description!=options.description

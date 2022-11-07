@@ -1,0 +1,43 @@
+include ../dropdown-date/dropdown-date
+include ../dropdown/dropdown
+include ../button/button
+
+
+mixin card-search-room(options)
+
+    if !options
+        - options = {}
+
+    if !options.from
+         - options.from = ''
+
+    if !options.to
+        - options.to = ''
+
+    if !options.guests
+        - options.guests = {}
+
+    if !options.classButton
+        - options.classButton = ''
+
+    form.card-search-room
+        fieldset.card-search-room__container
+            legend.card-search-room__title Найдём номера под ваши пожелания
+            .card-search-room__dropdown-date
+                +dropdown-date({
+                    dropdown: 'double',
+                    title_one: 'прибытие',
+                    title_two: 'выезд',
+                    from: options.from,
+                    to: options.to
+                })
+            .card-search-room__dropdown-guests
+                +dropdown({
+                    title: 'гости',
+                    status: '',
+                    params: 'guests',
+                    show: false,
+                    little: false,
+                    value: options.guests})
+            .card-search-room__button
+                +button({type: 'submit', value: 'arrow', description: 'подобрать номер', classes: options.classButton})

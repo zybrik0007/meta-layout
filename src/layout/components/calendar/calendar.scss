@@ -1,0 +1,217 @@
+.calendar {
+  position: relative;
+  display: block;
+  max-width: 320px;
+  width: 100%;
+}
+
+.air-datepicker {
+  box-sizing: border-box;
+  padding: 20px 20px 18px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.air-datepicker--navigation {
+  margin-top: -10px;
+  border: none;
+
+}
+
+.air-datepicker-nav {
+  padding: 4px 0 25px;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .air-datepicker-nav--action:first-child {
+    justify-content: flex-start;
+  }
+
+  .air-datepicker-nav--action:last-child {
+    justify-content: flex-end;
+  }
+
+  .air-datepicker-nav--action:first-child, .air-datepicker-nav--action:last-child {
+    &:hover {
+      background: $white;
+    }
+  }
+}
+
+.air-datepicker-nav--title {
+  h2 {
+    text-align: center;
+    @include h2;
+  }
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+.air-datepicker--content {
+  padding: 0;
+}
+
+.air-datepicker-body--day-name {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  color: $purple;
+  text-transform: capitalize;
+}
+
+.air-datepicker-body--cells.-days- {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -4px;
+  padding-top: 13px;
+}
+
+.air-datepicker-cell.-day- {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: $ds50;
+  width: 14.2857%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: $white;
+
+  &::after {
+    padding-top: 100%;
+    display: block;
+    content: '';
+  }
+
+  &:hover {
+    color: $white;
+    border-radius: 22px;
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    font-weight: 700;
+    border: none;
+  }
+
+  &.-other-month- {
+    color: $ds25;
+
+    &.-selected- {
+      color: $white;
+      border-radius: 22px;
+      background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+      font-weight: 700;
+    }
+  }
+
+  &.-selected- {
+    color: $white;
+    border-radius: 22px;
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    font-weight: 700;
+  }
+
+  &.-selected-.-range-from- {
+    &::before {
+      background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+      opacity: 0.25;
+      content: '';
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &.-selected-.-range-to- {
+    &::before {
+      background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+      opacity: 0.25;
+      content: '';
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      border: none;
+    }
+  }
+
+  &.-current- {
+    color: $white;
+    border-radius: 22px;
+    background: linear-gradient(180deg, $green 0%, #66D2EA 100%);
+    font-weight: 700;
+
+    &.-selected- {
+      color: $white;
+      border-radius: 22px;
+      background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+      font-weight: 700;
+    }
+  }
+
+  &.-in-range- {
+    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    opacity: 0.25;
+    color: $ds75;
+
+    &:hover {
+      border-radius: 0;
+      opacity: .5;
+    }
+  }
+
+  &.-disabled- {
+    pointer-events:none;
+  }
+}
+
+.air-datepicker-body--day-names {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.air-datepicker--buttons {
+  border-top: none;
+  margin-top: 13px;
+  padding: 0;
+}
+
+.air-datepicker-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: -8px;
+}
+
+.air-datepicker-button {
+  color: $purple;
+  @include h3;
+
+  &:hover {
+    color: $purple;
+    background: none;
+    @include h3;
+  }
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 20px;
+  color: $purple;
+}

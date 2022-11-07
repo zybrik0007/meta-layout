@@ -1,0 +1,13 @@
+mixin name-form-elements(options)
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.status
+        - options.status = ''
+
+    .name-form-elements
+        h3.name-form-elements__title=options.title
+        span.name-form-elements__status=options.status

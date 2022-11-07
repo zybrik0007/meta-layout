@@ -1,0 +1,24 @@
+.checkbox-double {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.checkbox-double__title {
+  font-family:Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds75;
+}
+
+.checkbox-double__description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: $ds50;
+  margin-top: 6px;
+}

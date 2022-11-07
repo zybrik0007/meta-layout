@@ -1,0 +1,48 @@
+.card-login {
+  @include card;
+}
+
+.card-login__container {
+  @include card-container;
+}
+
+.card-login__title {
+  @include h1;
+}
+
+.card-login__input-email {
+  margin-top: 16px;
+}
+
+.card-login__input-password {
+  margin-top: 5px;
+}
+
+.card-login__button-enter {
+  margin-top: 20px;
+}
+
+.card-login__footer {
+  margin-top: 30px;
+  padding-bottom: 1px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-login__link {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+.card-login__button-create {
+  width: 99px;
+}

@@ -1,0 +1,72 @@
+include ../../dropdown-date/dropdown-date
+include ../../dropdown/dropdown
+include ../../range-slider/range-slider
+include ../../expandable-checkbox-list/expandable-checkbox-list
+include ../../checkbox-buttons/checkbox-buttons
+include ../../room/room
+include ../../pagination/pagination
+
+
+mixin search-room-page(options)
+
+    if !options
+        - options = {}
+
+    if !options.date
+        - options.date = {}
+
+    if !options.guests
+        - options.guests = {}
+
+    if !options.price
+        - options.price = {}
+
+    if !options.ruls
+        - options.ruls = {}
+
+    if !options.availability
+        - options.availability = {}
+
+    if !options.facilities
+        - options.facilities = {}
+
+    if !options.additionalFacilities
+        - options.additionalFacilities = {}
+
+    if !options.rooms
+        - options.rooms = []
+
+    .search-room-page
+        .search-room-page__container
+            .search-room-page__wrapper
+                aside.search-room-page__filter.search-room-page__filter_show
+                    .search-room-page__filter__container
+                        .search-room-page__filter-dates
+                            +dropdown-date(options.date)
+                        .search-room-page__filter-guests
+                            +dropdown(options.guests)
+                        .search-room-page__filter-price
+                            +range-slider(options.price)
+                            span.search-room-page__filter-price-footer Стоимость за сутки пребывания в номере
+                        .search-room-page__filter-rules
+                            +checkbox-buttons(options.ruls)
+                        .search-room-page__filter-availability
+                            +checkbox-buttons(options.availability)
+                        .search-room-page__filter-facilities
+                            +dropdown(options.facilities)
+                        .search-room-page__filter-additional-facilities
+                            +expandable-checkbox-list(options.additionalFacilities)
+                section.search-room-page__rooms
+                    .search-room-page__rooms-container
+                        h2.search-room-page__rooms-title Номера, которые мы для вас подобрали
+                        .search-room-page__rooms-wrapper
+                            ul.search-room-page__rooms-list
+                                each item in options.rooms
+                                    li.search-room-page__rooms-item
+                                        +room(item)
+                        .search-room-page__pagination
+                            +pagination({page: 175, size: 12})
+            label.search-room-page__label
+                input(type='checkbox').search-room-page__input
+                i.search-room-page__icon
+

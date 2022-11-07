@@ -1,0 +1,15 @@
+include ../../card-account-registration/card-account-registration
+
+mixin registration-page(options)
+
+    if !options
+        - options = {}
+
+    if !options.link
+        - options.link = ''
+
+    .registration-page
+        .registration-page__container
+            section.registration-page__form
+                +card-account-registration({link: options.link})
+

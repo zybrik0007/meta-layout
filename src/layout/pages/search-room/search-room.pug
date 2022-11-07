@@ -1,0 +1,52 @@
+extends ../../template/website-template/website-template
+include ../../../layout/components/pages/search-room-page/search-room-page
+
+block parameters
+    - title = 'Поиск номеров'
+
+block main
+    +search-room-page({
+        date: {dropdown: 'single', title: 'даты пребывания в отеле', little: true, from: '19.08.2023', to: '23.08.2023'},
+        guests: {title: 'гости', params: 'guests', show: false, little: true, value: {adult: 3, child: 0, baby: 1}},
+        price: {title: 'диапазон цены', min: '0', max: '15000', from: '5000', to: '10000'},
+        ruls: {
+            title: 'Правила дома',
+            list: [
+                {description: 'Можно курить'},
+                {description: 'Можно с питомцами', checked: true},
+                {description: 'Можно пригласить гостей <br> (до 10 человек)', checked: true}]
+        },
+        availability: {
+            title: 'доступность',
+            list: [
+                {title: 'Широкий коридор', description: 'Ширина коридоров в номере <br> не менее 91 см.'},
+                {title: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист <br> и проводит до номера.'}
+            ]
+        },
+        facilities: {title: 'удобства номера', params: 'rooms', show: false, little: true, value: {bedroom: 2, bed: 2, bathroom: 2}},
+        additionalFacilities: {
+            title: 'дополнительные удобства',
+            list: [
+                {description: 'Завтрак'},
+                {description: 'Письменный стол', checked: true},
+                {description: 'Стул для кормления', checked: true},
+                {description: 'Кроватка', checked: true},
+                {description:'Телевизор'},
+                {description: 'Шампунь'}
+            ]
+        },
+        rooms: [
+            {name: 'room1', number: '888', price: '9990', luxury: true, rating: 5, review: 145, images: ['888-l.png', '840-xl.png', '980-xl.png', '856-xl.png'], arrow: true, link: mock},
+            {name: 'room2', number: '840', price: '9900', luxury: false, rating: 4, review: 65, images: ['840-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room3', number: '980', price: '8500', luxury: true, rating: 3, review: 35, images: ['980-l.png'], arrow: false, link: mock},
+            {name: 'room4', number: '856', price: '7300', luxury: false, rating: 5, review: 19, images: ['856-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room5', number: '740', price: '6000', luxury: false, rating: 4, review: 44, images: ['740-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room6', number: '982', price: '5800', luxury: false, rating: 3, review: 56, images: ['982-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room7', number: '678', price: '5500', luxury: false, rating: 5, review: 45, images: ['678-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room8', number: '450', price: '5300', luxury: false, rating: 4, review: 39, images: ['450-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room9', number: '350', price: '5000', luxury: false, rating: 3, review: 77, images: ['350-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room10', number: '666', price: '5000', luxury: false, rating: 5, review: 25, images: ['666-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room11', number: '444', price: '5000', luxury: false, rating: 3, review: 15, images: ['444-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock},
+            {name: 'room12', number: '352', price: '5000', luxury: false, rating: 3, review: 55, images: ['352-l.png', '888-xl.png', '980-xl.png', '856-xl.png'], arrow: false, link: mock}
+        ]
+    })

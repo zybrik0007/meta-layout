@@ -1,0 +1,16 @@
+mixin toggle(options)
+
+    if !options
+        - options = {}
+
+    if !options.description
+        - options.description = ''
+
+    if !options.checked
+        - options.checked = false
+
+
+    label.toggle
+        input(type='checkbox' checked=options.checked).toggle__input
+        i.toggle__icon
+        span.toggle__description=options.description

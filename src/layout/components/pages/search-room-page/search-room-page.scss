@@ -1,0 +1,185 @@
+.search-room-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+}
+
+.search-room-page__container {
+  max-width: 1440px;
+  min-width: 280px;
+  width: 80.6%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 73px;
+}
+
+.search-room-page__wrapper {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.search-room-page__filter {
+  width: 266px;
+}
+
+.search-room-page__rooms {
+  flex-grow: 1;
+}
+
+.search-room-page__filter-guests {
+  margin-top: 20px;
+}
+
+.search-room-page__filter-price {
+  margin-top: 31px;
+}
+
+.search-room-page__filter-price-footer {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: $ds50;
+  margin-top: 15px;
+  display: block;
+}
+
+.search-room-page__filter-rules {
+  margin-top: 30px;
+}
+
+.search-room-page__filter-availability {
+  margin-top: 29px;
+}
+
+.search-room-page__filter-facilities {
+  margin-top: 30px;
+}
+
+.search-room-page__filter-additional-facilities {
+  margin-top: 15px;
+}
+
+.search-room-page__rooms-title {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: $ds100;
+  padding-left: 10px;
+}
+
+.search-room-page__rooms-container {
+  padding-left: 48px;
+}
+
+.search-room-page__rooms-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1px;
+}
+
+.search-room-page__rooms-item {
+  display: block;
+  margin-left: 12px;
+  margin-top: 21px;
+}
+
+.search-room-page__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.search-room-page__label {
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 300px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.search-room-page__icon {
+  display: block;
+  transform: rotate(270deg);
+
+  &::before {
+    font-family: 'Material Icons';
+    content: 'card_membership';
+    font-style: normal;
+    font-size: 70px;
+    color: $purple;
+    opacity: .5;
+  }
+
+  &:hover {
+    &::before {
+      color: $ds50;
+    }
+  }
+}
+
+.search-room-page__input {
+  display: none;
+
+  &:checked ~ .search-room-page__icon {
+    transform: rotate(90deg);
+  }
+}
+
+@media screen and (max-width: $width-l) {
+  .search-room-page__filter {
+    display: none;
+    position: absolute;
+    background: white;
+    z-index: 98;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 3px;
+    box-shadow: rgba($black, 0.35) 0 5px 15px;
+    margin-left: -7px;
+  }
+
+  .search-room-page__filter_show {
+    display: block;
+  }
+
+  .search-room-page__filter__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+  }
+
+  .search-room-page__rooms-container {
+    padding-left: 0;
+  }
+
+  .search-room-page__rooms-list {
+    justify-content: center;
+  }
+
+  .search-room-page__filter-rules {
+    margin-top: 60px;
+  }
+
+  .search-room-page__label {
+    visibility: visible;
+  }
+}
+
+

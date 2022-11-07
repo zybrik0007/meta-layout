@@ -1,0 +1,38 @@
+.rate {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.rate__icon {
+  display: block;
+
+  &::before {
+    width: 24px;
+    height: 24px;
+    font-family:'Material Icons';
+    content: 'star_border';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    cursor: pointer;
+  }
+}
+
+.rate__icon_checked {
+  &::before {
+    content: 'star';
+  }
+}
+
+
+
+

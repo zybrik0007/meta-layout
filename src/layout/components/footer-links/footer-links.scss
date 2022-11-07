@@ -1,0 +1,31 @@
+.footer-links__title {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $ds100;
+}
+
+.footer-links__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links__item {
+  display: block;
+  margin-top: 20px;
+}
+
+.footer-links__link {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $ds50;
+  text-decoration: none;
+  cursor: pointer;
+}
+

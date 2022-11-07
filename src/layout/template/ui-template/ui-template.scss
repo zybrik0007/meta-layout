@@ -1,0 +1,13 @@
+.ui-template {
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.ui-icon {
+  position: absolute;
+  top: 33px;
+  left: 30px;
+}

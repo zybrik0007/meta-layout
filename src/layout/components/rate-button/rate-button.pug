@@ -1,0 +1,11 @@
+mixin rate-button(options)
+
+    if !options
+        - options = {}
+
+    if !options.rating
+        - options.rating = 0
+
+    ul.rate(class=options.rating !== 0 ? 'rate_checked': '')
+        - for (let x = 1; x < 6; x++)
+            li.rate__icon(class=x<=options.rating ? 'rate__icon_checked': '')(data-id=x)

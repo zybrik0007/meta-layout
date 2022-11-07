@@ -1,0 +1,25 @@
+include ../name-form-elements/name-form-elements
+include ../input-masked/input-masked
+
+
+mixin text-field(options)
+
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.status
+        - options.status = ''
+
+    if !options.placeholder
+        - options.placeholder = ''
+
+    if !options.value
+        - options.value = ''
+
+    .text-field
+        .text-field__head
+            +name-form-elements(options)
+        +input-masked(options)

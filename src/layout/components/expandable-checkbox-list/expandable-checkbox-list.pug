@@ -1,0 +1,27 @@
+include ../../components/name-form-elements/name-form-elements
+include ../../components/checkbox/checkbox
+
+mixin expandable-checkbox-list(options)
+
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.checked
+        - options.checked = false
+
+    if !options.list
+        - options.list = []
+
+
+    .expandable-checkbox-list
+        label.expandable-checkbox-list__label
+            input(type='checkbox' checked=options.checked).expandable-checkbox-list__input
+            h3.expandable-checkbox-list__title=options.title
+            i.expandable-checkbox-list__icon
+        ul.expandable-checkbox-list__list
+            each item in options.list
+                li.expandable-checkbox-list__item
+                    +checkbox(item)

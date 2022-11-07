@@ -1,0 +1,276 @@
+.form-elements {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.form-elements__container {
+  padding: 143px 141px 131px;
+}
+
+.form-elements__header, .form-elements__center, .form-elements__footer {
+  display: flex;
+}
+
+.form-elements__item {
+  min-width: 33.3333%;
+}
+
+.form-elements__header {
+  .form-elements__item:nth-child(2) {
+    padding-left: 59px;
+  }
+
+  .form-elements__item:nth-child(3) {
+    padding-left: 66px;
+  }
+}
+
+.form-elements__text-field-focus {
+  margin-top: 20.44px;
+}
+
+.form-elements__dropdown {
+  margin-top: 20.44px;
+}
+
+.form-elements__masked-text-field {
+  margin-top: 22.46px;
+}
+
+.form-elements__date-dropdown-double {
+  margin-top: 41.5px;
+}
+
+.form-elements__date-dropdown-single-little {
+  margin-top: 40.56px;
+}
+
+.form-elements__subscription-text-field {
+  margin-top: 41px;
+}
+
+.form-elements__radio-buttons {
+  margin-top: 38px;
+}
+
+.form-elements__radio-buttons-tittle {
+  @include h3;
+}
+
+.form-elements__radio-buttons-list {
+  display: flex;
+  margin-top: 14px;
+}
+
+.form-elements__radio-buttons-item {
+  display: block;
+  padding-right: 20px;
+}
+
+.form-elements__toggle {
+  margin-top: 39px;
+}
+
+.form-elements__toggle-title {
+  @include h3;
+}
+
+.form-elements__toggle-item {
+  display: block;
+  margin-top: 14px;
+}
+
+.form-elements__like-button {
+  margin-top: 44px;
+}
+
+.form-elements__like-button-title {
+  @include h3;
+}
+
+.form-elements__like-button-list {
+  display: flex;
+  margin-top: 14px;
+}
+
+.form-elements__like-button-item {
+  display: block;
+  padding-right: 10px;
+}
+
+.form-elements__rate-button {
+  margin-top: 39px;
+}
+
+.form-elements__rate-button-title {
+  @include h3;
+}
+
+.form-elements__rate-button-list {
+  margin-top: 14px;
+  display: flex;
+}
+
+.form-elements__rate-button-item {
+  display: block;
+  padding-right: 20px;
+}
+
+.form-elements__buttons {
+  margin-top: 42px;
+}
+
+.form-elements__buttons-title {
+  @include h3;
+}
+
+.form-elements__buttons-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-elements__buttons-item {
+  display: block;
+  padding: 15px 0;
+}
+
+.form-elements__buttons-item_small {
+  width: 99px;
+}
+
+.form-elements__buttons-item_large {
+  width: 320px;
+}
+
+.form-elements__pagination {
+  margin-top: 25px;
+}
+
+.form-elements__pagination-title {
+  @include h3;
+}
+
+.form-elements__pagination-body {
+  margin-top: 14px;
+}
+
+.form-elements__center {
+  margin-top: 101px;
+
+  .form-elements__item:nth-child(2) {
+    padding-left: 60px;
+  }
+
+  .form-elements__item:nth-child(3) {
+    padding-left: 65px;
+  }
+
+}
+
+.form-elements__expanded {
+  margin-top: 20px;
+}
+
+.form-elements__expandable-checkbox-list-hide {
+  margin-top: 158px;
+}
+
+.form-elements__expandable-checkbox-list-show {
+  margin-top: 20px;
+}
+
+.form-elements__rich-checkbox-buttons {
+  margin-top: 256px;
+}
+
+.form-elements__bullet-list {
+  margin-top: 255px;
+  width: 260px;
+}
+
+.form-elements__bullet-list-title {
+  @include h3;
+}
+
+.form-elements__bullet-list-body {
+  margin-top: 11px;
+}
+
+.form-elements__footer {
+  margin-top: 85px;
+}
+
+.form-elements__amenities-item {
+  width: 280px;
+  display: block;
+  padding: 17px 0 14px;
+  border-bottom: 1px solid rgba($black, 0.1);;
+}
+
+.form-elements__comment {
+  padding-left: 166px;
+  margin-top: 28px;
+}
+
+@media screen and (max-width: $width-xxl) {
+  .form-elements__container {
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .form-elements__header, .form-elements__center, .form-elements__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-elements__item {
+    min-width: 100%;
+    padding: 0;
+
+    & > div {
+      margin-top: 20px;
+    }
+  }
+
+  .form-elements__header {
+    margin-top: 100px;
+
+    .form-elements__item:nth-child(2) {
+      padding: 0;
+    }
+
+    .form-elements__item:nth-child(3) {
+      padding: 0;
+    }
+  }
+
+
+
+  .form-elements__center {
+    margin-top: 20px;
+
+    .form-elements__item:nth-child(2) {
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .form-elements__item:nth-child(3) {
+      padding: 0;
+      margin-top: 20px;
+    }
+  }
+
+  .form-elements__footer {
+    margin-top: 20px;
+  }
+
+  .form-elements__comment {
+    padding: 0;
+    margin-top: 20px;
+  }
+
+}
+

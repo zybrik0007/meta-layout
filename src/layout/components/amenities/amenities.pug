@@ -1,0 +1,20 @@
+mixin amenities(options)
+
+    if !options
+        - options = {}
+
+    if !options.icon
+        - options.icon = ''
+
+    if !options.text
+        - options.text = ''
+
+    if !options.comment
+        - options.comment = ''
+
+
+    .amenities
+        i.amenities__icon(data-id=options.icon)
+        div.amenities__list
+            h2.amenities__description=options.description
+            span.amenities__comment=options.comment

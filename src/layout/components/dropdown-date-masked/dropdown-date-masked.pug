@@ -1,0 +1,9 @@
+include ../name-form-elements/name-form-elements
+include ../input-dropdown-masked/input-dropdown-masked
+
+mixin dropdown-date-masked(options)
+    .dropdown-date-masked
+        .dropdown-date-masked__head
+            +name-form-elements(options)
+        .dropdown-date-masked__body
+            +input-dropdown-masked(options)

@@ -1,0 +1,29 @@
+include ../text-field/text-field
+
+
+mixin subscription-text-field(options)
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.status
+        - options.status = ''
+
+    if !options.placeholder
+        - options.placeholder = ''
+
+    if !options.value
+        - options.value = ''
+
+    if !options.little
+        - options.little = false
+
+    if !options.classes
+        - options.classes = ''
+
+
+    .subscription-text-field(class=options.little ? 'subscription-text-field_little': '')
+        +text-field(options)
+        .subscription-text-field__icon

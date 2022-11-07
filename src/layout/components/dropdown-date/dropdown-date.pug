@@ -1,0 +1,61 @@
+include ../calendar/calendar
+include ../dropdown-date-masked/dropdown-date-masked
+
+mixin dropdown-date(options)
+
+    if !options
+        - options = {}
+
+    if !options.dropdown
+        - options.dropdown = 'single'
+
+    if !options.title
+        - options.title = ''
+
+    if !options.title_one
+        - options.title_one = ''
+
+    if !options.title_two
+        - options.title_two = ''
+
+    if !options.from
+        - options.from = ''
+
+    if !options.to
+        - options.to= ''
+
+    if options.dropdown === 'single'
+        .dropdown-date(class=options.little ? 'dropdown-date_little': '' data-date=options.dropdown data-from=options.from, data-to=options.to)
+            .dropdown-date__single
+                +dropdown-date-masked({
+                    title: options.title,
+                    type: text,
+                    placeholder: 'ДД.ММ.ГГГГ',
+                    value: '',
+                    classes: 'js-dropdown-date'
+                })
+            .dropdown-date__calendar.dropdown-date__calendar_visibility
+                +calendar({classes: 'js-calendar'})
+
+    if options.dropdown === 'double'
+        .dropdown-date(data-date=options.dropdown data-days=0)
+            .dropdown-date__double
+                .dropdown-date__from
+                    +dropdown-date-masked({
+                        title: options.title_one,
+                        placeholder: 'ДД.ММ.ГГГГ',
+                        value: options.from,
+                        classes: 'js-dropdown-date'
+                    })
+                .dropdown-date__to
+                    +dropdown-date-masked({
+                        title: options.title_two,
+                        status: '',
+                        placeholder: 'ДД.ММ.ГГГГ',
+                        value: options.to,
+                        classes: 'js-dropdown-date'
+                    })
+            .dropdown-date__calendar.dropdown-date__calendar_visibility
+                +calendar({classes: 'js-calendar'})
+
+

@@ -1,0 +1,22 @@
+.name-form-elements {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name-form-elements__title {
+  color: $ds100;
+  @include h3;
+}
+
+.name-form-elements__status {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $ds50;
+}

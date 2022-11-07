@@ -1,0 +1,78 @@
+.card-account-registration {
+  background: $white;
+  @include card;
+}
+
+.card-account-registration__container {
+  @include card-container;
+}
+
+.card-account-registration__title {
+  @include h1;
+}
+
+.card-account-registration__input-name {
+  margin-top: 16px;
+}
+
+.card-account-registration__input-surname {
+  margin-top: 5px;
+}
+
+.card-account-registration__radio {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+}
+
+.card-account-registration__radio-item {
+  display: block;
+
+  &:first-child {
+    padding-right: 20px;
+  }
+}
+
+.card-account-registration__input-date {
+  margin-top: 24px;
+}
+
+.card-account-registration__input-email {
+  margin-top: 20px;
+}
+
+.card-account-registration__input-password {
+  margin-top: 5px;
+}
+
+.card-account-registration__toggle {
+  margin-top: 10px;
+}
+
+.card-account-registration__button-payment {
+  margin-top: 23px;
+}
+
+.card-account-registration__footer-wrapper {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-account-registration__link {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  padding-right: 5px;
+  text-decoration: none;
+  color: $black;
+  cursor: pointer;
+}
+
+.card-account-registration__button-login-in {
+  width: 99px;
+}

@@ -1,0 +1,15 @@
+extends ../../template/website-template/website-template
+include ../../components/pages/room-details-page/room-detail-page
+
+block parameters
+    - title = 'Информация о номере'
+
+block main
+    +room-details-page({
+        chart: {
+            yellow: 130,
+            purple: 65,
+            green: 65,
+            black: 0
+        }
+    })

@@ -1,0 +1,30 @@
+.dropdown-date {
+  position: relative;
+  display: block;
+  max-width: 320px;
+  width: 100%;
+}
+
+.dropdown-date__double {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
+  gap: 10px;
+
+  @media (min-width: 500px) {
+    gap: 20px;
+  }
+}
+
+.dropdown-date__calendar {
+  position: absolute;
+  padding-top: 5px;
+  z-index: 9;
+}
+
+.dropdown-date__calendar_visibility {
+  display: none;
+}
+
+.dropdown-date_little {
+  max-width: 266px;
+}

@@ -1,0 +1,26 @@
+.input-masked {
+  display: block;
+  width: 100%;
+}
+
+.input-masked__input{
+  width: 100%;
+  border: 1px solid $ds25;
+  outline: none;
+  padding: 12px 14px;
+  color: $ds75;
+  border-radius: 3px;
+  @include body;
+
+  &::placeholder {
+    color: $ds25;
+  }
+
+  &:focus {
+    border: 1px solid $ds50;
+  }
+
+  &:hover {
+    border-color: $ds50;
+  }
+}

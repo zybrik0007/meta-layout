@@ -1,0 +1,18 @@
+mixin navigation(options)
+
+    if !options
+        - options = []
+
+    ul.navigation
+        each item in options
+            if item.type === 'str'
+                li.navigation__item
+                    a(href=item.link).navigation__link=item.description
+            if item.type === 'dropdown'
+                li.navigation__item
+                    .navigation__dropdown
+                        span.navigation__dropdown-title=item.description
+                        ul.navigation__dropdown-list
+                            each link in item.list
+                                li.navigation__dropdown-item
+                                    a(href=link.link).navigation__link=link.description

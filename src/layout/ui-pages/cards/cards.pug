@@ -1,0 +1,41 @@
+extends ../../template/ui-template/ui-template
+include ../../components/card-account-registration/card-account-registration
+include ../../components/card-login/card-login
+include ../../components/card-room/card-room
+include ../../components/card-search-room/card-search-room
+include ../../components/calendar/calendar
+include ../../components/room/room
+
+block parameters
+    - title = 'Карточки'
+
+block main
+    .cards
+        .cards__container
+            .cards__wrapper
+                .cards__column.cards__column_l
+                    .cards__item
+                        +card-search-room({
+                            from: '12.10.2022',
+                            to: '22.10.2022',
+                            guests: {
+                                adult: 0,
+                                child: 0,
+                                baby: 0
+                            }
+                        })
+                    .cards__item
+                        +card-account-registration({link: 'http://localhost:8080/test'})
+                .cards__column.cards__column_l
+                    .cards__item
+                        +card-room({number: '888', luxury: true, price: '9990', from: '19.10.2022', to: '23.10.2022', service: '100', sup: '300', adult:3, child: 0, baby: 0})
+                    .cards__item
+                        +card-login({link: 'http://localhost:8080/test'})
+                .cards__column.cards__column_s
+                    .cards__item
+                        .cards__calendar
+                    .cards__item
+                        +room({name: 'room1', number: '888', price: '10000', rating: 1, arrow: true})
+                    .cards__item
+                        +room({name: 'room2', number: '999', price: '9990', rating: 3, luxury: true, review: 5, images: ['350-l.png','350-l.png', '350-l.png', '350-l.png'], arrow: true})
+

@@ -1,0 +1,216 @@
+.room-details-page {
+  width: 100%;
+  min-width: 320px;
+}
+
+.room-details-page__container {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-details-page__gallery {
+  width: 100%;
+  min-width: 320px;
+  display: grid;
+  grid-template: auto auto / 68.125% 31.875%;
+  gap: 0;
+}
+
+.room-details-page__picture-big {
+  grid-row: span 2;
+  max-height: 485px;
+}
+
+.room-details-page__picture-little {
+  height: 242.5px;
+}
+
+.room-details-page__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.room-details-page__picture_mirror {
+  transform: scaleX(-1);
+}
+
+.room-details-page__info-header {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: $ds100;
+}
+
+.room-details-page__info-list {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  max-width: 291px;
+  padding-right: 11px;
+}
+
+.room-details-page__info-item {
+  display: block;
+  padding-top: 20px;
+}
+
+.room-details-page__info-item_underscore {
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba($ds100, 0.1);
+}
+
+.room-details-page__wrapper-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+}
+
+.room-details-page__impression {
+  max-width: 320px;
+}
+
+.room-details-page__impression-header {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: #1F2041;
+  padding-bottom: 10px;
+  margin-left: 6px;
+}
+
+.room-details-page__review {
+  width: 100%;
+  max-width: 712px;
+  margin-top: 27px;
+}
+
+.room-details-page__review-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.room-details-page__review-title  {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: $ds100;
+}
+
+.room-details-page__review-sum  {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+  text-align: right;
+  color: $ds50;
+  margin-top: 8px;
+}
+
+.room-details-page__review-list {
+  display: flex;
+  flex-flow: column nowrap;
+
+  li:first-child {
+    margin-top: 21px;
+  }
+}
+
+.room-details-page__review-item {
+  display: block;
+  margin-top: 23px;
+}
+
+.room-details-page__rule {
+  width: 260px;
+}
+
+.room-details-page__rule-title {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: $ds100;
+  padding: 0 0 19px 21px;
+}
+
+.room-details-page__cancel {
+  width: 100%;
+  max-width: 341px;
+}
+
+.room-details-page__cancel-title {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 23px;
+  color: $ds100;
+  padding-bottom: 19px;
+}
+
+.room-details-page__cancel-description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $ds75;
+}
+
+.room-details-page__wrapper-form {
+  width: 380px;
+}
+
+.room-details-page__wrapper {
+  padding: 70px 0;
+  width: 80.6%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.room-details-page__wrapper-list-footer {
+  margin-top: 33px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 102px;
+}
+
+@media screen and (max-width: $width-xl) {
+  .room-details-page__wrapper-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: $width-m) {
+  .room-details-page__wrapper-list-header, .room-details-page__wrapper-list-footer {
+    gap: 30px;
+  }
+}
+
+
+
+
+
+
+
+

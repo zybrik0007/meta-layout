@@ -1,0 +1,8 @@
+mixin social-icon(options)
+    if !options
+        - options = {}
+
+    if !options.classes
+        - options.classes = ''
+
+    i.social-icon(class=options.classes)

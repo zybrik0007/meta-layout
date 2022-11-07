@@ -1,0 +1,76 @@
+include ../../../components/chart/chart
+include ../../../components/amenities/amenities
+include ../../../components/comment/comment
+include ../../../components/bullet-list/bullet-list
+include ../../../components/card-room/card-room
+
+
+mixin room-details-page(options)
+
+    if !options
+        - options = {}
+
+    if !options.gallery
+        - options.gallery = {}
+
+    if !options.gallery.one
+        - options.gallery.one = {}
+
+    if !options.chart
+        - options.chart = {}
+
+    .room-details-page
+        .room-details-page__container
+            .room-details-page__gallery
+                .room-details-page__picture.room-details-page__picture-big
+                    img(src=require('../../../images/background/room-details-page-picture-big.png')).room-details-page__img
+                .room-details-page__picture.room-details-page__picture-little
+                    img(src=require('../../../images/background/room-details-page-picture-little-one.png')).room-details-page__img
+                .room-details-page__picture.room-details-page__picture-little
+                    img(src=require('../../../images/background/room-details-page-picture-little-two.png')).room-details-page__img
+            .room-details-page__wrapper
+                .room-details-page__wrapper-list
+                    .room-details-page__wrapper-list-header
+                        section.room-details-page__info
+                            h2.room-details-page__info-header Сведения о номере
+                            ul.room-details-page__info-list
+                                li.room-details-page__info-item.room-details-page__info-item_underscore
+                                    +amenities({icon: 'insert_emoticon', description: 'Комфорт', comment: 'Шумопоглощающие стены'})
+                                li.room-details-page__info-item.room-details-page__info-item_underscore
+                                    +amenities({icon: 'location_city', description: 'Удобство', comment: 'Окно в каждой из спален'})
+                                li.room-details-page__info-item
+                                    +amenities({icon: 'whatshot', description: 'Уют', comment: 'Номер оснащён камином'})
+                        section.room-details-page__impression
+                            h2.room-details-page__impression-header Впечатления от номера
+                            +chart(options.chart)
+                    section.room-details-page__review
+                        .room-details-page__review-header
+                            h2.room-details-page__review-title Отзывы посетителей номера
+                            span.room-details-page__review-sum 2 отзыва
+                        ul.room-details-page__review-list
+                            li.room-details-page__review-item
+                                +comment({
+                                    img: 'face1.jpg',
+                                    name: 'Мурад Сарафанов',
+                                    status: '5 дней назад',
+                                    comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                                    like: {checked: true, value: 12}
+                                })
+                            li.room-details-page__review-item
+                                +comment({
+                                    img: 'face2.png',
+                                    name: 'Патрисия Стёклышкова',
+                                    status: 'Неделю назад',
+                                    comment: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.',
+                                    like: {checked: false, value: 2}
+                                })
+
+                    .room-details-page__wrapper-list-footer
+                        section.room-details-page__rule
+                            h2.room-details-page__rule-title Правила
+                            +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+                        section.room-details-page__cancel
+                            h2.room-details-page__cancel-title Отмена
+                            p.room-details-page__cancel-description Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .room-details-page__wrapper-form
+                    +card-room({number: '888', luxury: true, price: '9990', from: '19.08.2023', to: '23.08.2023', service: '', sup: '300', adult: 3, child: 0, baby: 0})

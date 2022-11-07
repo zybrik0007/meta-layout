@@ -1,0 +1,150 @@
+.burger {
+  position: relative;
+  cursor: pointer;
+}
+
+.burger__label {
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.burger__input {
+  display: none;
+}
+
+.burger-icon {
+  &::before {
+    content: 'menu';
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: $purple;
+  }
+}
+
+.burger__input:checked ~ .burger-icon {
+  &::before {
+    content: 'close';
+  }
+}
+
+.burger__wrapper {
+  display: none;
+  position: absolute;
+  width: 280px;
+  background: $white;
+  padding: 20px;
+  right: 0;
+  margin-top: 20px;
+  box-shadow: rgba($black, 0.35) 0 5px 15px;
+  border-radius: 3px;
+  z-index: 100;
+}
+
+.burger__wrapper_show {
+  display: block;
+}
+
+.burger__dropdown-list {
+  display: none;
+}
+
+.burger__item {
+  display: block;
+  padding: 10px;
+}
+
+.burger__link {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $ds50;
+  text-decoration: none;
+  @include etc;
+
+  &:hover {
+    color: $ds75;
+  }
+}
+
+.burger__dropdown {
+  position: relative;
+}
+
+.burger__dropdown-title {
+  display: flex;
+  align-items: center;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $ds50;
+
+  &::after {
+    content: 'expand_more';
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 20px;
+    color: $ds50;
+  }
+}
+
+.burger__dropdown:hover {
+  .burger__dropdown-title {
+    color: $ds75;
+
+    &::after {
+      color: $ds100;
+    }
+  }
+
+  .burger__dropdown-list {
+    display: block;
+  }
+}
+
+.burger__dropdown-item {
+  display: block;
+  padding: 15px;
+}
+
+.burger__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.burger__buttons-registration {
+  margin-top: 10px;
+}
+
+.burger__user {
+  display: block;
+  margin-top: 50px;
+  text-align: center;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: $purple;
+  text-decoration: none;
+
+  &:hover {
+    color: $ds50;
+  }
+}
+

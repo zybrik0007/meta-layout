@@ -1,0 +1,15 @@
+include ../name-form-elements/name-form-elements
+
+mixin pagination(options)
+    if !options
+        - options = {}
+
+    if !options.size
+        - options.size = 0
+
+    if !options.page
+        - options.page = 0
+
+    .pagination(data-size=options.size data-pages=options.page)
+        .pagination__pages
+        .pagination__description

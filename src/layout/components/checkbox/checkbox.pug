@@ -1,0 +1,28 @@
+include ../checkbox-single/checkbox-single
+include ../checkbox-double/checkbox-double
+
+mixin checkbox(options)
+
+    if !options
+        - options= {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.description
+        - options.description = ''
+
+    if !options.checked
+        - options.checked = false
+
+    label.checkbox
+        input(type='checkbox' checked=options.checked).checkbox__input
+        i.checkbox__icon
+        if !options.title
+            +checkbox-single({description: options.description})
+        else
+            +checkbox-double({title: options.title, description: options.description})
+
+
+
+

@@ -1,0 +1,33 @@
+mixin button(options)
+    if !options
+        - options = {}
+
+    if !options.type
+        - options.type = 'button'
+
+    if !options.value
+        - options.value = 'shaded'
+
+    if !options.classes
+        - options.classes = ''
+
+    if !options.description
+        - options.description = 'click me'
+
+    if !options.narrow
+        - options.narrow = false
+
+
+    if options.value === 'shaded'
+        button(type=options.type).button.button_shaded(class=options.narrow ? 'button_narrow': '')(class=options.classes)=options.description
+
+    if options.value === 'bordered'
+        button(type=options.type).button.button_bordered(class=options.narrow ? 'button_bordered-narrow': '')(class=options.classes)=options.description
+
+    if options.value === 'uncoloured'
+        button(type=options.type)(class=options.classes).button.button_uncoloured=options.description
+
+    if options.value === 'arrow'
+        button(type=options.type).button.button_arrow(class=options.classes)=options.description
+
+

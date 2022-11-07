@@ -1,0 +1,54 @@
+.like-button {
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.like-button__input {
+  display: none;
+}
+
+.like-button__value {
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 40px;
+  height: 20px;
+  border: 1px solid $ds25;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: $ds25;
+  padding: 0 9px 0 4px;
+
+  &::before {
+    font-family: 'Material Icons';
+    content: 'favorite_border';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 9px;
+    color: $ds25;
+  }
+}
+
+
+.like-button__input:checked ~ .like-button__value  {
+  border: 1px solid $purple;
+  color: $purple;
+
+  &::before {
+    content: 'favorite';
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
+

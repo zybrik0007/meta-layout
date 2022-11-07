@@ -1,0 +1,89 @@
+.irs--flat {
+  height: 6px;
+}
+
+.irs {
+  display: flex;
+  align-items: center;
+  width: 266px;
+}
+
+.irs-line {
+  display: block;
+  height: 6px;
+  width: 266px;
+  background: $white;
+  border: 1px solid $ds25;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.irs-from {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: $gradient-green;
+  border: 2px solid $white;
+  border-radius: 10px;
+  font-size: 0;
+  z-index: 1;
+}
+
+.irs-to {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: $gradient-green;
+  border: 2px solid $white;
+  border-radius: 10px;
+  font-size: 0;
+  z-index: 1;
+}
+
+.irs-min {
+  display: none;
+}
+
+.irs-max {
+  display: none;
+}
+
+.irs-single {
+  position: absolute;
+  visibility: visible;
+  font-size: 0;
+}
+
+.irs-bar {
+  position: absolute;
+  height: 100%;
+  background: $gradient-green;
+  border-radius: 3px;
+}
+
+.irs-hidden-input {
+  visibility: hidden;
+}
+
+.irs-handle.from.type_last {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: $gradient-green;
+  border: 2px solid $white;
+  border-radius: 10px;
+  font-size: 0;
+  z-index: 2;
+}
+
+.irs-handle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background:  $gradient-green;
+  border: 2px solid $white;
+  border-radius: 10px;
+  font-size: 0;
+  z-index: 1;
+}
+

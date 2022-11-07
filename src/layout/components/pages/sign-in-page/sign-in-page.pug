@@ -1,0 +1,15 @@
+include ../../card-login/card-login
+
+
+mixin sign-in-page(options)
+
+    if !options
+        - options = {}
+
+    if !options.link
+        - options.link = ''
+
+    .sign-in-page
+        .sign-in-page__container
+            section.sign-in-page__form
+                +card-login({link: options.link})

@@ -1,0 +1,20 @@
+mixin input-dropdown-masked(options)
+
+    if !options
+        - options = {}
+
+    if !options.placeholder
+        - options.placeholder = ''
+
+    if !options.value
+        -options.value = ''
+
+    if !options.type
+        - options.type = 'text'
+
+    if !options.classes
+        - options.classes = ''
+
+    label.input-dropdown-masked
+        input(readonly=true type=options.type placeholder=options.placeholder value=options.value class=options.classes).input-dropdown-masked__input
+        i.input-dropdown-masked__icon

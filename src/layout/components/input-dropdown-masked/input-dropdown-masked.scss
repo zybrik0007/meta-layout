@@ -1,0 +1,52 @@
+.input-dropdown-masked {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 320px;
+}
+
+.input-dropdown-masked__input {
+  width: 100%;
+  border: 1px solid $ds25;
+  border-radius: 3px;
+  outline: none;
+  padding: 12px 44px 12px 14px;
+  color: $ds75;
+  cursor: pointer;
+  @include etc;
+  @include body;
+
+  &::placeholder {
+    color: $ds25;
+  }
+
+  &:focus {
+    border: 1px solid $ds50;
+  }
+
+  &:hover {
+    border-color: $ds50;
+  }
+}
+
+.input-dropdown-masked__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Material Icons';
+
+  &::before {
+    content: 'expand_more';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: $ds50;
+  }
+}

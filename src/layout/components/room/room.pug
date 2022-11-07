@@ -1,0 +1,65 @@
+include ../rate-button/rate-button
+
+mixin room(options)
+
+    if !options
+        - options = {}
+
+    if !options.images
+        - options.images = []
+
+    if !options.arrow
+        - options.arrow = false
+
+    if !options.luxury
+        - options.luxury = false
+
+    if !options.review
+        - options.review = 0
+
+    if !options.rating
+        - options.rating = 0
+
+    if !options.number
+        -options.number = ''
+
+    if !options.link
+        -options.link = ''
+
+    .room
+        .room__header
+            each img in options.images
+                img(src=require(`../../../images/rooms/${img}`) alt='Номер').room__image.room__image_hidden
+            if options.arrow === true && options.images.length > 1
+                span.room_next
+                    i.room__icon
+                span.room_prev
+                    i.room__icon
+
+            if options.images.length === 0
+                span.room__text
+
+            if options.images.length > 1
+                ul.room__slider
+                    - for(let $i=0; $i < options.images.length; $i++)
+                        li.room__slider-item
+                            label.room__slider-label
+                                input.room__slider-input(type='radio' name=options.name data-id=$i)
+                                span
+        a(href=options.link).room__footer
+            .room__info
+                p.room__number
+                    span.room__number-icon №
+                    span.room__number-value=options.number
+                    if options.luxury === true
+                        span.room__number-luxury люкс
+                p.room__price
+                    span(data-price=options.price).room__price-value
+                    span.room__price-description в сутки
+            .room__footer-str
+                i
+            .room__rate
+                +rate-button({name: options.name, rating: options.rating})
+                p.room__review
+                    span(data-review=options.review).room__review-value=options.review
+                    span.room__review-description Отзывов

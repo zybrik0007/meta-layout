@@ -1,0 +1,23 @@
+.card-search-room {
+  @include card;
+}
+
+.card-search-room__container {
+  @include card-container;
+}
+
+.card-search-room__title {
+  @include h1;
+}
+
+.card-search-room__dropdown-date {
+  margin-top: 21px;
+}
+
+.card-search-room__dropdown-guests {
+  margin-top: 22px;
+}
+
+.card-search-room__button {
+  margin-top: 31px;
+}

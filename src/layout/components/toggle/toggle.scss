@@ -1,0 +1,57 @@
+.toggle {
+  width: 100%;
+  max-width: 260px;
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+.toggle__input {
+  display: none;
+}
+
+.toggle__icon {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid $ds25;
+  padding: 0 4px;
+
+  &::before {
+    content: '';
+    box-sizing: border-box;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: $ds25;
+  }
+}
+
+.toggle__input:checked ~ .toggle__icon {
+  border: 1px solid $purple;
+  justify-content: flex-end;
+
+  &::before{
+    background: $gradient;
+  }
+}
+
+.toggle__description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $ds75;
+  padding-left: 10px;
+}
+
+
+
+
+
+
+

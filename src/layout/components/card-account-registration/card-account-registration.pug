@@ -1,0 +1,40 @@
+include ../../components/text-field/text-field
+include ../../components/toggle/toggle
+include ../../components/masked-text-field/masked-text-field
+include ../../components/button/button
+include ../../components/radio/radio
+
+mixin card-account-registration(options)
+
+    if !options
+        - options = {}
+
+    if !options.link
+        - options.link = ''
+
+    form.card-account-registration
+        fieldset.card-account-registration__container
+            legend.card-account-registration__title Регистрация аккаунта
+            .card-account-registration__input-name
+                +text-field({placeholder: 'Имя'})
+            .card-account-registration__input-surname
+                +text-field({placeholder: 'Фамилия'})
+            ul.card-account-registration__radio
+                li.card-account-registration__radio-item
+                    +radio({name: 'gender', value: 'men', checked: true, description: 'Мужчина'})
+                li.card-account-registration__radio-item
+                    +radio({name: 'gender', value: 'women', checked: false, description: 'Женщина'})
+            .card-account-registration__input-date
+                +masked-text-field({title: 'дата рождения'})
+            .card-account-registration__input-email
+                +text-field({title: 'данные для входа в сервис', placeholder: 'Email'})
+            .card-account-registration__input-password
+                +text-field({placeholder: 'Пароль'})
+            .card-account-registration__toggle
+                +toggle({description: 'Получать спецпредложения'})
+            .card-account-registration__button-payment
+                +button({value: 'arrow', description: 'зарегистрироваться'})
+            .card-account-registration__footer-wrapper
+                a(href=options.link).card-account-registration__link Уже есть аккаунт на Toxin
+                .card-account-registration__button-login-in
+                    +button({value: 'bordered', description: 'Войти'})

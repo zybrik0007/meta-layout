@@ -1,0 +1,64 @@
+include ../name-form-elements/name-form-elements
+include ../text-field/text-field
+include ../input-masked/input-masked
+include ../button/button
+include ../input-dropdown-masked/input-dropdown-masked
+
+
+mixin dropdown(options)
+
+    -
+        let attr = {
+            rooms: {
+            placeholder: 'Сколько спален, кроватей',
+            select: [
+                {name: 'спальни', value: 'bedroom'},
+                {name: 'кровати', value: 'bed'},
+                {name: 'ванные комнаты', value: 'bathroom'}]},
+            guests: {
+                placeholder: 'Сколько гостей',
+                select: [
+                    {name: 'взрослые', value: 'adult'},
+                    {name: 'дети', value: 'child'},
+                    {name: 'младенцы', value: 'baby'}]
+            }}
+
+    if !options
+        - options = {title: '', status: '', params: 'rooms', hide: false, value: {bedroom: 0, bed: 0, bathroom: 0}}
+
+    if !options.show
+        - options.show = false
+
+    if !options.little
+        - options.little = false
+
+    if !options.params
+        - options.params = 'rooms'
+
+    if !options.value
+        - options.value = {bedroom: 0, bed: 0, bathroom: 0}
+
+    .dropdown(class=options.show ? 'dropdown_show': '')(class=options.little ? 'dropdown_little': '' data-show = options.show.toString())
+        .dropdown__header
+            +name-form-elements({title: options.title, status: options.status})
+        .dropdown__body
+            +input-dropdown-masked({placeholder: attr[options.params].placeholder, classes: 'js-dropdown'})
+        ul.dropdown__list(data-value=options.params)
+            each item in attr[options.params].select
+                li.dropdown__item
+                    span.dropdown__item-name=item.name
+                    .dropdown__item-list
+                        button(type='button').dropdown__item-button.dropdown__item-button-minus(data-value=item.value)='-'
+                        input(type='text' readonly value=options.value[item.value] ? options.value[item.value]: 0  data-value=item.value).dropdown__item-input
+                        button(type='button').dropdown__item-button.dropdown__item-button-plus(data-value= item.value)='+'
+            if options.params === 'guests'
+                .dropdown__buttons
+                    +button({type: 'button',
+                        description: 'очистить',
+                        value: 'uncoloured',
+                        classes: 'js-dropdown__button_reset'})
+                    +button({type: 'button',
+                        description: 'применить',
+                        value: 'uncoloured',
+                        classes: 'js-dropdown__button_apply'})
+

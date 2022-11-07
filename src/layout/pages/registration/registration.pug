@@ -1,0 +1,8 @@
+extends ../../template/website-template/website-template
+include ../../components/pages/registration-page/registration-page
+
+block parameters
+    - title = 'Регистрация'
+
+block main
+    +registration-page({link: mock})

@@ -1,0 +1,57 @@
+include ../button/button
+
+mixin burger(options)
+
+    if !options
+        - options = {}
+
+    if !options.nav
+        - options.nav = []
+
+    if !options.user
+        - options.user = ''
+
+    if !options.userLink
+        - options.userLink = ''
+
+    .burger
+        label.burger__label
+            input(type='checkbox').burger__input
+            i.burger-icon
+        .burger__wrapper
+            .burger__navigation
+                ul.burger__list
+                    each item in options.nav
+                        if item.type === 'str'
+                            li.burger__item
+                                a(href=item.link).burger__link=item.description
+                        if item.type === 'dropdown'
+                            li.burger__item
+                                .burger__dropdown
+                                    span.burger__dropdown-title=item.description
+                                    ul.burger__dropdown-list
+                                        each link in item.list
+                                            li.burger__dropdown-item
+                                                a(href=link.link).burger__link=link.description
+
+            if !options.user
+                .burger__buttons
+                    .burger__buttons-enter
+                        +button({
+                            value: 'uncoloured',
+                            type: options.type,
+                            description: 'войти',
+                            classes: options.classEnter
+                        })
+                    .burger__buttons-registration
+                        +button({
+                            value: 'uncoloured',
+                            type: options.type,
+                            description: 'зарегистрироваться',
+                            classes: options.classRegistration
+                        })
+
+            if options.user
+                a(href=options.userLink).burger__user=options.user
+
+

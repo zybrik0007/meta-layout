@@ -1,0 +1,239 @@
+.room {
+  width: 270px;
+  height: 257.5px;
+  background: $white;
+  box-shadow: 0 10px 20px rgba($ds100, 0.05);
+}
+
+.room__header {
+  position: relative;
+  width: 100%;
+  height: 151.5px;
+  border-radius: 4px 4px 0 0;
+}
+
+.room__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  color: $white;
+}
+
+.room__image_hidden {
+  visibility: hidden;
+}
+
+.room_next {
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  background: linear-gradient(90deg, rgba($black, 0.5) 0%, rgba($black, 0) 99.99%, rgba($white, 0) 100%);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+
+  i {
+    cursor: pointer;
+    transform: rotate(90deg);
+    content: 'expand_more';
+
+    &::before {
+      content: 'expand_more';
+    }
+  }
+}
+
+.room__icon {
+  width: 44px;
+  height: 44px;
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+}
+
+.room_prev {
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(90deg, rgba($black, 0.5) 0%, rgba($black, 0) 99.99%, rgba($white, 0) 100%);
+
+  i {
+    cursor: pointer;
+    transform: rotate(90deg);
+
+    &::before {
+      content: 'expand_more';
+    }
+  }
+}
+
+.room__text {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    content: 'Нет изображений';
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $ds50;
+  }
+
+}
+
+.room__slider {
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  bottom: 16px;
+  right: 14px;
+}
+
+.room__slider-item {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  display: block;
+  margin: 0 2px;
+
+}
+
+.room__slider-label {
+  position: absolute;
+
+  span {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    width: 7px;
+    height: 7px;
+    border: 1px solid $white;
+    border-radius: 50%;
+  }
+}
+
+.room__slider-input {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  visibility: hidden;
+
+  &:checked ~ span {
+    background: $white;
+  }
+}
+
+.slider__active {
+  background: $white;
+}
+
+.room__footer {
+  padding: 19px 17px 20px 20px;
+  text-decoration: none;
+}
+
+.room__info {
+  padding: 2px 17px 0 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room__number-icon {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  font-style: normal;
+  font-weight: 700;
+  color: $ds100;
+}
+
+.room__number-value {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  padding-left: 4px;
+  color: $ds100;
+}
+
+.room__number-luxury {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $purple;
+  padding-left: 9px;
+}
+
+.room__price-value {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds50;
+}
+
+.room__price-description {
+  padding-left: 5px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: $ds50;
+}
+
+.room__footer-str {
+  height: 1px;
+  background: rgba($black, 0.1);
+  margin-top: 10px;
+}
+
+.room__rate {
+  padding: 8px 20px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room__review-value {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds50;
+  padding-right: 3px;
+}
+
+.room__review-description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds50;
+}
+

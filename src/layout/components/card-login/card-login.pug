@@ -1,0 +1,25 @@
+include ../../components/text-field/text-field
+include ../../components/button/button
+
+
+mixin card-login(options)
+
+    if !options
+        - options ={}
+
+    if !options.link
+        - options.link = ''
+
+    form.card-login
+        fieldset.card-login__container
+            legend.card-login__title Войти
+            .card-login__input-email
+                +text-field({placeholder: 'Email'})
+            .card-login__input-password
+                +text-field({placeholder: 'Пароль'})
+            .card-login__button-enter
+                +button({value: 'arrow', description: 'Войти'})
+            .card-login__footer
+                a(href=options.link).card-login__link Нет аккаунта на Toxin?
+                .card-login__button-create
+                    +button({value: 'bordered', description: 'Создать'})

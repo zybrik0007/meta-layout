@@ -1,0 +1,21 @@
+mixin radio(options)
+    if !options
+        - options = {}
+
+    if !options.name
+        - options.name = ''
+
+    if !options.value
+        - options.value = ''
+
+    if !options.checked
+        - options.checked = false
+
+    if !options.description
+        - options.description = ''
+
+    label.radio
+        input(type='radio' name=options.name value=options.value checked=options.checked).radio__input
+        i.radio__icon
+        span.radio__description=options.description
+

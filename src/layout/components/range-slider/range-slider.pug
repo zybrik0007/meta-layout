@@ -1,0 +1,25 @@
+mixin range-slider(options)
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.min
+        - options.min = 0
+
+    if !options.max
+        - options.max = 15000
+
+    if !options.from
+        - options.from = 0
+
+    if !options.to
+        - options.to = 15000
+
+    .range-slider(data-min=options.min data-max=options.max data-from=options.from data-to=options.to)
+        .range-slider__head
+            h3.range-slider__title=options.title
+            span.range-slider__status=status
+        .range-slider__toddler
+            input.range-slider__input

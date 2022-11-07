@@ -1,0 +1,33 @@
+.checkbox {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__icon {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+  height: 20px;
+  background: $white;
+  border: 1px solid $purple;
+  border-radius: 4px;
+}
+
+.checkbox__input:checked ~ .checkbox__icon {
+  &::before {
+    content: url('image/checkbox-icon.svg');
+    border-bottom-color: $gradient;
+  }
+}
+
+
+

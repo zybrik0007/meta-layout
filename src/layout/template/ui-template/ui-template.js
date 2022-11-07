@@ -1,0 +1,1 @@
+import './ui-template.scss';

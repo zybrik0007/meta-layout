@@ -1,0 +1,105 @@
+extends ../../template/ui-template/ui-template
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/footer-mobile/footer-mobile
+
+block parameters
+    - title = 'Заголовки и нижние колонтитулы'
+
+block main
+    .headers-footers
+        .headers-footers__container
+            .headers-footers__column-header
+                +header({
+                    user: '',
+                    userLink: mock,
+                    classEnter: '',
+                    classRegistration: '',
+                    logoLink: mock,
+                    nav: [
+                        {type: 'str', description: 'О нас', link: mock},
+                        {
+                            type: 'dropdown', description: 'Услуги',
+                            list: [{description: 'Услуга 1', link: mock},
+                                {description: 'Услуга 2', link: mock},
+                                {description: 'Услуга 3', link: mock}]
+                        },
+                        {type: 'str', description: 'Вакансии', link: mock},
+                        {type: 'str', description: 'Новости', link: mock},
+                        {
+                            type: 'dropdown', description: 'Соглашения',
+                            list: [{description: 'Соглашение 1', link: mock},
+                                {description: 'Соглашение 2', link: mock},
+                                {description: 'Соглашение 3', link: mock}]
+                        }]
+                })
+
+            .headers-footers__column-header-logout
+                +header({
+                user: 'Юлий Цезарь',
+                userLink: mock,
+                classEnter: '',
+                classRegistration: '',
+                logoLink: mock,
+                nav: [
+                    {type: 'str', description: 'О нас', link: mock},
+                    {
+                        type: 'dropdown', description: 'Услуги',
+                        list: [{description: 'Услуга 1', link: mock},
+                            {description: 'Услуга 2', link: mock},
+                            {description: 'Услуга 3', link: mock}]
+                    },
+                    {type: 'str', description: 'Вакансии', link: mock},
+                    {type: 'str', description: 'Новости', link: mock},
+                    {
+                        type: 'dropdown', description: 'Соглашения',
+                        list: [{description: 'Соглашение 1', link: mock},
+                            {description: 'Соглашение 2', link: mock},
+                            {description: 'Соглашение 3', link: mock}]
+                    }]
+            })
+
+            .headers-footers__column-footer
+                +footer({
+                    nav: {
+                        title: 'Навигация',
+                        list: [
+                            {link: mock, description: 'О нас'},
+                            {link: mock, description: 'Новости'},
+                            {link: mock, description: 'Служба поддержки'},
+                            {link: mock, description: 'Услуги'}
+                        ]
+                    },
+                    review: {
+                        title: 'О нас',
+                        list: [
+                            {link: mock, description: 'О сервисе'},
+                            {link: mock, description: 'Наша команда'},
+                            {link: mock, description: 'Вакансии'},
+                            {link: mock, description: 'Инвесторы'}
+                        ]
+                    },
+                    service: {
+                        title: 'Служба поддержки',
+                        list: [
+                            {link: mock, description: 'Соглашения'},
+                            {link: mock, description: 'Сообщества'},
+                            {link: mock, description: 'Связь с нами'}
+                        ]
+                    },
+                    icons: [
+                        {classes: 'fab fa-twitter', link: mock},
+                        {classes: 'fab fa-facebook-square', link: mock},
+                        {classes: 'fab fa-instagram', link: mock}
+                    ],
+                    logoLink: mock
+                })
+            .headers-footers__column-footer-mobile
+                +footer-mobile({
+                    logoLink: mock,
+                    icons: [
+                        {classes: 'fab fa-twitter', link: mock},
+                        {classes: 'fab fa-facebook-square', link: mock},
+                        {classes: 'fab fa-instagram', link: mock}
+                    ]
+                })

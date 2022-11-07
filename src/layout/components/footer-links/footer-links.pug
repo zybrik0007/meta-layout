@@ -1,0 +1,17 @@
+mixin footer-links(options)
+
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title
+
+    if !options.list
+        - options.list = []
+
+    .footer-links
+        h2.footer-links__title=options.title
+        ul.footer-links__list
+            each item in options.list
+                li.footer-links__item
+                    a(href=item.link).footer-links__link=item.description

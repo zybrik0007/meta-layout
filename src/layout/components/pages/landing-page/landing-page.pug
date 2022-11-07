@@ -1,0 +1,15 @@
+include ../../card-search-room/card-search-room
+
+mixin landing-page(options)
+
+    if !options
+        - options = {}
+
+    if !options.form
+        - options.form = {}
+
+    .landing-page
+        .landing-page__container
+            section.landing-page__form
+                +card-search-room(options.form)
+            p.landing-page__description Лучшие номера для вашей работы, отдыха и просто вдохновения

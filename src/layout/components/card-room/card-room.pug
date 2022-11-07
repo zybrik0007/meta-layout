@@ -1,0 +1,76 @@
+include ../dropdown/dropdown
+include ../dropdown-date/dropdown-date
+include ../button/button
+
+mixin card-room(options)
+
+    if !options
+        - options = {}
+
+    if !options.number
+        - options.number = 0
+
+    if !options.luxury
+        - options.luxury = false
+
+    if !options.price
+        - options.price = 0
+
+    if !options.service
+        - options.service = 0
+
+    if !options.sup
+        - options.sup = 0
+
+    if !options.from
+        - options.from = ''
+
+    if !options.to
+        - options.to = ''
+
+    if !options.adult
+        - options.adult = 0
+
+    if !options.child
+        - options.child = 0
+
+    if !options.baby
+        - options.baby = 0
+
+    form.card-room
+        fieldset.card-room__container
+            .card-room__header
+                p.card-room__number
+                    span №
+                    span=options.number
+                    span=options.luxury ? 'люкс' : ''
+                p.card-room__price-day
+                    span(data-price=options.price).card-room__price-day-value
+                    span в сутки
+            .card-room__dropdown-date
+               +dropdown-date({dropdown: 'double', title_one: 'прибытие', title_two: 'выезд', from: options.from, to: options.to})
+            .card-room__dropdown-guests
+                +dropdown({params: 'guests', title: 'гости', value: {adult: options.adult, child: options.child, baby: options.baby}})
+            .card-room__calculation
+                ul.card-room__data
+                    li.card-room__price
+                        span.card-room__price-info
+                        span.card-room__price-sum
+                    li.card-room__service
+                        div.card-room__service-wrapper
+                            span.card-room__service-info Сбор за услуги: скидка 2 179₽
+                            i.card-room__article
+                        span(data-service=options.service).card-room__service-sum
+                    li.card-room__sup-service
+                        div.card-room__sup-service-wrapper
+                            span.card-room__sup-service-info Сбор за дополнительные услуги
+                            i.card-room__article
+                        span(data-sup=options.sup).card-room__sup-service-sum
+                .card-room__sum
+                    span Итого
+                    span
+                    span.card-room__total-price 38 081₽
+            .card-room__button-book
+                +button({value: 'arrow', description: 'Забронировать'})
+
+

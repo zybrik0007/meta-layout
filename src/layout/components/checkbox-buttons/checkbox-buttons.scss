@@ -1,0 +1,25 @@
+.checkbox-buttons {
+  width: 100%;
+  max-width: 320px
+}
+
+.checkbox-buttons__header {
+  padding-bottom: 16px;
+}
+
+.checkbox-buttons__list {
+  margin-top: -10px;
+}
+
+.checkbox-buttons__item {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds50;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  cursor: pointer;
+}

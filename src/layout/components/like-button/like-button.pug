@@ -1,0 +1,15 @@
+mixin like-button(options)
+
+    if !options
+        - options = {}
+
+    if !options.value
+        - options.value = 0
+
+    if !options.checked
+        - options.checked = false
+
+
+    label.like-button
+        input(type='checkbox' checked=options.checked).like-button__input
+        span.like-button__value=options.value

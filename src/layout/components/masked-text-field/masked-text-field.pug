@@ -1,0 +1,27 @@
+include ../text-field/text-field
+
+mixin masked-text-field(options)
+
+    if !options
+        - options = {}
+
+    if !options.title
+        - options.title = ''
+
+    if !options.status
+        - options.status = ''
+
+    if !options.value
+        - options.value = ''
+
+    if !options.classes
+        - options.classes = ''
+
+
+    .masked-text-field
+        +text-field({
+            title: options.title,
+            status: options.status,
+            value: options.value,
+            placeholder: 'ДД.ММ.ГГГГ',
+            classes: 'js-masked-text-field'})

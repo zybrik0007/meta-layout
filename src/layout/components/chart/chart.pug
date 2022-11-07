@@ -1,0 +1,28 @@
+mixin chart(options)
+
+    if !options
+        - options = {}
+
+    if !options.yellow
+        - options.yellow = 0
+
+    if !options.green
+        - options.green = 0
+
+    if !options.purple
+        - options.purple = 0
+
+    if !options.black
+        - options.black = 0
+
+    .chart
+        .chart__circle
+            canvas.chart__circle-item
+            p.chart-circle-description
+                span.chart__circle-value
+                span.chart__circle-text
+        ul.chart__description
+            li(data-val=options.yellow).chart__description-item.chart__description-item_yellow Великолепно
+            li(data-val=options.green).chart__description-item.chart__description-item_green Хорошо
+            li(data-val=options.purple).chart__description-item.chart__description-item_purple Удовлетворительно
+            li(data-val=options.black).chart__description-item.chart__description-item_black Разочарован

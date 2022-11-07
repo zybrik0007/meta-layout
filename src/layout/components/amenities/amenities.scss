@@ -1,0 +1,54 @@
+.amenities {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 4px 0 7px;
+}
+
+.amenities__icon {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-right: 10px;
+
+  &::before {
+    font-family: 'Material Icons';
+    content: attr(data-id);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 41px;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding-bottom: 3px;
+  }
+}
+
+.amenities__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.amenities__description {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds75;
+  padding-bottom: 4px;
+}
+
+.amenities__comment {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: $ds75;
+  margin-top: 1px;
+  @include etc;
+}

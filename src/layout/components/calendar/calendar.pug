@@ -1,0 +1,9 @@
+mixin calendar(options)
+
+    if !options
+        - options = {}
+
+    if !options.classes
+        - options.classes = ''
+
+    .calendar(class=options.classes)

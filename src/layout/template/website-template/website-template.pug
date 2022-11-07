@@ -1,0 +1,83 @@
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/footer-mobile/footer-mobile
+
+block parameters
+    - var title = ''
+
+
+doctype html
+html(lang='ru')
+    head
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(charset='utf-8')
+        title=title
+    body.website-template
+        - var mock = 'https://zybrik0007.github.io/meta-layout-pages/error.html'
+
+        header.website-template__header
+            +header({
+                user: '',
+                userLink: mock,
+                classEnter: '',
+                classRegistration: '',
+                logoLink: mock,
+                headerName: title,
+                nav: [
+                    {type: 'str', description: 'О нас', link: mock},
+                    {
+                        type: 'dropdown', description: 'Услуги',
+                        list: [{description: 'Услуга 1', link: mock},
+                            {description: 'Услуга 2', link: mock},
+                            {description: 'Услуга 3', link: mock}]
+                    },
+                    {type: 'str', description: 'Вакансии', link: mock},
+                    {type: 'str', description: 'Новости', link: mock},
+                    {
+                        type: 'dropdown', description: 'Соглашения',
+                        list: [{description: 'Соглашение 1', link: mock},
+                            {description: 'Соглашение 2', link: mock},
+                            {description: 'Соглашение 3', link: mock}]
+                    }]})
+        main.website-template__main
+            block main
+        footer.website-template__footer
+                +footer({
+                nav: {
+                    title: 'Навигация',
+                    list: [
+                        {link: mock, description: 'О нас'},
+                        {link: mock, description: 'Новости'},
+                        {link: mock, description: 'Служба поддержки'},
+                        {link: mock, description: 'Услуги'}
+                        ]},
+                review: {
+                    title: 'О нас',
+                    list: [
+                        {link: mock, description: 'О сервисе'},
+                        {link: mock, description: 'Наша команда'},
+                        {link: mock, description: 'Вакансии'},
+                        {link: mock, description: 'Инвесторы'}
+                        ]},
+                service: {
+                    title: 'Служба поддержки',
+                    list: [
+                        {link: mock,description: 'Соглашения'},
+                        {link: mock, description: 'Сообщества'},
+                        {link: mock, description: 'Связь с нами'}
+                        ]},
+                icons: [
+                    {classes: 'fab fa-twitter', link: mock},
+                    {classes: 'fab fa-facebook-square', link: mock},
+                    {classes: 'fab fa-instagram', link: mock}
+                    ],
+                logoLink: mock})
+        footer.website-template__footer-mobile
+                +footer-mobile({
+                    logoLink: mock,
+                    icons: [
+                        {classes: 'fab fa-twitter', link: mock},
+                        {classes: 'fab fa-facebook-square', link: mock},
+                        {classes: 'fab fa-instagram', link: mock}
+                    ]
+                })

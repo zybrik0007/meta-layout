@@ -1,0 +1,19 @@
+include ../../components/logo-ui/logo-ui
+
+
+block parameters
+    - var title = ''
+
+doctype html
+html(lang='ru')
+    head
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        meta(charset='utf-8')
+        title=title
+    body.ui-template
+        - var mock = 'https://zybrik0007.github.io/meta-layout-pages/error.html'
+
+        header
+            .ui-icon
+                +logo-ui()
+        block main

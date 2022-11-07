@@ -1,0 +1,54 @@
+include ../logo/logo
+include ../button/button
+include ../navigation/navigation
+include ../burger/burger
+
+mixin header(options)
+
+    if !options
+        - options = {}
+
+    if !options.user
+        - options.user = ''
+
+    if !options.userLink
+        - options.userLink = ''
+
+    if !options.logoLink
+        - options.logoLink = ''
+
+    if !options.nav
+        - options.nav = []
+
+    if !options.classEnter
+        - options.classEnter = ''
+
+    if !options.classRegistration
+        - options.classRegistration = ''
+
+    if !options.headerName
+        - options.headerName = ''
+
+    .header
+        h1.header__tittle=options.headerName
+        .header__container
+            .header__logo
+                +logo({link: options.logoLink})
+            .header__navigation
+                .header__wrapper
+                    +navigation(options.nav)
+                    if !options.user
+                        .header__buttons
+                            .header__enter
+                                +button({value: 'bordered', type: options.type, description: 'войти', classes: options.classEnter, narrow: true})
+                            .header__registration
+                                +button({value: 'shaded', type: options.type, description: 'зарегистрироваться', classes: options.classRegistration, narrow: true})
+
+                    if options.user
+                        .header__user
+                            a(href=options.userLink)=options.user
+                .header__burger
+                    +burger({nav: options.nav, user: options.user})
+
+
+

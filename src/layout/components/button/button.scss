@@ -1,0 +1,87 @@
+.button {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.button_shaded {
+  padding: 15px 20px 15px 18px;
+  background: $gradient;
+  border-radius: 22px;
+  text-align: center;
+  color: $white;
+}
+
+.button_bordered {
+  width: 100%;
+  padding: 13px 17px;
+  background:
+          linear-gradient(white, white) padding-box,
+          $gradient border-box;
+  border-radius: 22px;
+  border: 2px solid transparent;
+  color: $purple;
+}
+
+.button_uncoloured {
+  background: $white;
+  color: $purple;
+
+  &:hover, &:focus {
+    color: $ds50;
+  }
+}
+
+.button_arrow {
+  padding: 15px 20px;
+  position: relative;
+  background: $gradient;
+  border-radius: 22px;
+  text-align: center;
+  color: $white;
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    font-family: 'Material Icons';
+    content: "arrow_forward";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: none;
+    z-index: 1;
+  }
+}
+
+.button_shaded, .button_bordered, .button_arrow {
+  &:hover, &:focus {
+    opacity: .5;
+  }
+}
+
+.button_narrow {
+  padding: 10px 19.5px;
+}
+
+.button_bordered-narrow {
+  padding: 8px 19px 8px 18px;
+}
+
+

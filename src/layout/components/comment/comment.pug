@@ -1,0 +1,32 @@
+include ../../components/like-button/like-button
+
+mixin comment(options)
+    if !options
+        - options = {}
+
+    if !options.img
+        - options.img = ''
+
+    if !options.name
+        - options.name = ''
+
+    if !options.status
+        - options.status = ''
+
+    if !options.like
+        - options.like = {}
+
+    if !options.comment
+        - options.comment = ''
+
+    .comment
+        .comment__author
+            .comment__face
+                img.comment__img(src=require(`../../../images/avatars/${options.img}`))
+            .comment__author-description
+                h3.comment__name=options.name
+                span.comment__status=options.status
+        .comment__info
+            .comment__like
+                +like-button(options.like)
+            span.comment__description!=options.comment

@@ -1,0 +1,35 @@
+mixin ui-color(options)
+
+    if !options
+        - options = {}
+
+    if !options.type
+        - options.type = ''
+
+    if !options.title
+        - options.title = ''
+
+    if !options.description
+        - options.description = ''
+
+    .ui-color
+        case options.type
+            when 'ds100'
+                .ui-color__square.ui-color__square_ds100
+            when 'ds75'
+                .ui-color__square.ui-color__square_ds75
+            when 'ds50'
+                .ui-color__square.ui-color__square_ds50
+            when 'ds25'
+                .ui-color__square.ui-color__square_ds25
+            when 'ds5'
+                .ui-color__square.ui-color__square_ds5
+            when 'purple'
+                .ui-color__square.ui-color__square_purple
+            when 'green'
+                .ui-color__square.ui-color__square_green
+            default
+                .ui-color__square.ui-color__square_ds100
+        .ui-color__wrapper
+            span.ui-color__title=options.title
+            span.ui-color__description=options.description

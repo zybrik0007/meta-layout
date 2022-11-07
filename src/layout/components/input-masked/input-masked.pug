@@ -1,0 +1,16 @@
+mixin input-masked(options)
+
+    if !options
+        - options = {}
+
+    if !options.placeholder
+        - options.placeholder = ''
+
+    if !options.value
+        - options.value = ''
+
+    if !options.classes
+        - options.classes = ''
+
+    label.input-masked
+        input.input-masked__input(placeholder=options.placeholder value=options.value)(class=options.classes)
